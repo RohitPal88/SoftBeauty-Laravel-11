@@ -1,0 +1,19 @@
+.zoomable {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .zoomable__img {
+    transform-origin: var(--zoom-pos-x, 0%) var(--zoom-pos-y, 0%);
+    transition: transform 0.15s linear;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+  }
+  
+  .zoomable--zoomed .zoomable__img {
+    cursor: zoom-in;
+    transform: scale(var(--zoom, 2)) rotateY(10deg) rotateX(-10deg); /* Added 3D transformation */
+  }
+  
